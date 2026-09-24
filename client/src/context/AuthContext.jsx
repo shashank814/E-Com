@@ -22,8 +22,6 @@ export const AuthContextProvider = ({ children }) => {
         JSON.stringify(res.data.data.accessToken),
       );
 
-      console.log(res);
-
       return true;
     } catch (error) {
       console.log(error.response?.data || error.message);
@@ -40,8 +38,6 @@ export const AuthContextProvider = ({ children }) => {
         "accessToken",
         JSON.stringify(res.data.accessToken),
       );
-
-      console.log(res);
 
       return true;
     } catch (error) {

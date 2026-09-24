@@ -38,9 +38,6 @@ export const ProductContextProvider = ({ children }) => {
     formData.append("price", data.price);
     formData.append("image", data.image[0]);
 
-    console.log(parsed);
-    
-
     try {
       const res = await axios.post(
         `${API}/api/products/add-product`,
