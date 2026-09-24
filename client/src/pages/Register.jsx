@@ -69,6 +69,18 @@ const Register = () => {
       )}
     </div>
 
+    <div>
+      <input
+        type="password"
+        placeholder="confirmPassword"
+        {...register("confirmPassword", { required: "Confirm Password is required" })}
+        className="w-full p-3 rounded-lg bg-gray-50 text-gray-800 outline-none border border-gray-300 focus:ring-2 focus:ring-[#c1f026]"
+      />
+      {errors.confirmPassword && (
+        <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message}</p>
+      )}
+    </div>
+
     <button className="w-full bg-[#c1f026] text-black py-3 rounded-lg font-semibold hover:opacity-90 transition">
       Register
     </button>
