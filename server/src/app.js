@@ -14,6 +14,10 @@ app.use(cors({
   credentials: true
 }));
 
+app.get("/", (req, res) => {
+  res.send("server is running on port 3000")
+})
+
 app.use("/api/auth", authRoutes)
 app.use("/api/products", productRoutes)
 
