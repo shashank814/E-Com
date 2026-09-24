@@ -8,11 +8,13 @@ export const AuthContextProvider = ({ children }) => {
   const token = localStorage.getItem("accessToken");
   const parsed = JSON.parse(token);
 
+  const API = import.meta.env.VITE_API_URL
+
 
   const loginUser = async (data) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        `${API}/api/auth/login`,
         data,
       );
       localStorage.setItem(
@@ -31,7 +33,7 @@ export const AuthContextProvider = ({ children }) => {
   const registerUser = async (data) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        `${API}/api/auth/register`,
         data,
       );
       localStorage.setItem(
@@ -50,7 +52,7 @@ export const AuthContextProvider = ({ children }) => {
   const logoutUser = async () => {
   try {
     await axios.post(
-      "http://localhost:3000/api/auth/logout",
+      `${API}/api/auth/logout`,
       {}, 
       {
         headers: {
